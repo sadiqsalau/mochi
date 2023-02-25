@@ -12,8 +12,10 @@
     "@fontsource/quicksand": "^4.5.12",
     "@headlessui/react": "^1.7.12",
     "@headlessui/tailwindcss": "^0.1.2",
+    "@loadable/component": "^5.15.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
