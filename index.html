@@ -8,7 +8,25 @@
     <title><%= VITE_APP_TITLE %></title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Splash -->
+      <div class="flex flex-col gap-4 items-center justify-center min-h-screen">
+        <!-- Logo -->
+        <img
+          src="/src/assets/logo.svg"
+          alt="<%= VITE_APP_TITLE %>"
+          class="w-16 h-16"
+        />
+        <!-- ./Logo -->
+
+        <!-- Title -->
+        <h1 class="font-semibold text-3xl lowercase text-green-500">
+          <%= VITE_APP_TITLE %>
+        </h1>
+        <!-- ./Title -->
+      </div>
+      <!-- ./Splash -->
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
