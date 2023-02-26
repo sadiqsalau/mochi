@@ -25,6 +25,8 @@ export const router = createBrowserRouter(
         <Route path="login" element={<Page page="Login" />} />
         <Route path="register" element={<Page page="Registration" />} />
       </Route>
+
+      <Route path="chats" element={<Page page="Chats" />} />
     </Route>
   ),
   {
