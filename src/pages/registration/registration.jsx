@@ -1,10 +1,19 @@
 import { FormGroup, Input, Label, SubmitButton } from "@/components/auth-page";
 import { Link } from "react-router-dom";
 import { SocialLogin } from "@/partials/social-login/social-login";
+import { useNavigate } from "react-router-dom";
 
 export const Registration = () => {
+  const navigate = useNavigate();
+
   return (
-    <form className="flex flex-col gap-2">
+    <form
+      className="flex flex-col gap-2"
+      onSubmit={(ev) => {
+        ev.preventDefault();
+        navigate("/chats");
+      }}
+    >
       {/* Email */}
       <FormGroup>
         <Label>Enter your email ID</Label>
