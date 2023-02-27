@@ -7,10 +7,8 @@ import { SideArea } from "./side-area";
 export const Chats = () => {
   const [showMainArea, setShowMainArea] = useState(false);
 
-  const toggleMainArea = () => setShowMainArea(!showMainArea);
-
   return (
-    <ChatsProvider value={{ toggleMainArea }}>
+    <ChatsProvider value={{ setShowMainArea }}>
       <div className="w-full overflow-hidden">
         <div
           className={clsx(
