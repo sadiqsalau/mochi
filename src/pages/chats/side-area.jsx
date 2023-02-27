@@ -14,7 +14,7 @@ import { conversations } from "@/fake/conversations";
 import { useChats } from "./chats-context";
 
 export const SideArea = () => {
-  const { toggleMainArea } = useChats();
+  const { setShowMainArea } = useChats();
 
   return (
     <div className="h-screen overflow-auto flex flex-col md:border-r md:border-stone-200">
@@ -45,7 +45,7 @@ export const SideArea = () => {
         <SectionHeading>Recent Chats</SectionHeading>
         <div className="divide-y divide-stone-100">
           {conversations.map((conversations, i) => (
-            <div onClick={toggleMainArea} key={i}>
+            <div onClick={() => setShowMainArea(true)} key={i}>
               <Conversation {...conversations} />
             </div>
           ))}
