@@ -7,7 +7,7 @@ export const HeaderButton = forwardRef((props, ref) => (
     ref={ref}
     className={clsx(
       props.className,
-      "w-10 h-10 flex justify-center items-center",
+      "w-10 h-10 inline-flex justify-center items-center",
       "text-green-500"
     )}
   >
