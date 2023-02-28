@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useLocation } from "react-router-dom";
 
+import { MainArea } from "./main-area";
 import { SideArea } from "./side-area";
 
 export const Chats = () => {
@@ -18,7 +19,7 @@ export const Chats = () => {
         <SideArea />
 
         {/* Content */}
-        <div className="h-screen overflow-scroll"></div>
+        <MainArea />
       </div>
     </div>
   );
