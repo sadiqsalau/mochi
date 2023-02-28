@@ -11,7 +11,7 @@ export const Chats = () => {
     <div className="w-full overflow-hidden">
       <div
         className={clsx(
-          "w-[200%] md:w-full grid grid-cols-2 md:grid-cols-[350px_1fr]",
+          "w-[200%] md:w-full grid grid-cols-2 md:grid-cols-[400px_1fr]",
           "duration-500 md:transform-none",
           location.state?.showMainArea && "-translate-x-1/2"
         )}
