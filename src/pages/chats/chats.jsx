@@ -1,28 +1,25 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-import { ChatsProvider } from "./chats-context";
 import { SideArea } from "./side-area";
 
 export const Chats = () => {
-  const [showMainArea, setShowMainArea] = useState(false);
+  const location = useLocation();
 
   return (
-    <ChatsProvider value={{ setShowMainArea }}>
-      <div className="w-full overflow-hidden">
-        <div
-          className={clsx(
-            "w-[200%] md:w-full grid grid-cols-2 md:grid-cols-[350px_1fr]",
-            "duration-500 md:transform-none",
-            showMainArea && "-translate-x-1/2"
-          )}
-        >
-          <SideArea />
+    <div className="w-full overflow-hidden">
+      <div
+        className={clsx(
+          "w-[200%] md:w-full grid grid-cols-2 md:grid-cols-[350px_1fr]",
+          "duration-500 md:transform-none",
+          location.state?.showMainArea && "-translate-x-1/2"
+        )}
+      >
+        <SideArea />
 
-          {/* Content */}
-          <div className="h-screen overflow-scroll"></div>
-        </div>
+        {/* Content */}
+        <div className="h-screen overflow-scroll"></div>
       </div>
-    </ChatsProvider>
+    </div>
   );
 };

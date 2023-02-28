@@ -5,17 +5,14 @@ import { FaChevronLeft } from "react-icons/fa";
 import { Header } from "@/components/header/header";
 import { HeaderButton } from "@/components/header/header-button";
 import { HeaderTitle } from "@/components/header/header-title";
+import { Link } from "react-router-dom";
 import { Navbar } from "@/partials/navbar/navbar";
 import { NotificationIcon } from "@/icons/notification-icon";
 import { SectionHeading } from "@/components/section-heading/section-heading";
 import { availableContacts } from "@/fake/available-contacts";
 import { conversations } from "@/fake/conversations";
 
-import { useChats } from "./chats-context";
-
 export const SideArea = () => {
-  const { setShowMainArea } = useChats();
-
   return (
     <div className="h-screen overflow-auto flex flex-col md:border-r md:border-stone-200">
       {/* Header */}
@@ -45,9 +42,16 @@ export const SideArea = () => {
         <SectionHeading>Recent Chats</SectionHeading>
         <div className="divide-y divide-stone-100">
           {conversations.map((conversations, i) => (
-            <div onClick={() => setShowMainArea(true)} key={i}>
+            <Link
+              key={i}
+              to="/chats"
+              replace={false}
+              state={{
+                showMainArea: true,
+              }}
+            >
               <Conversation {...conversations} />
-            </div>
+            </Link>
           ))}
         </div>
 
