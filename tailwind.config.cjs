@@ -21,6 +21,9 @@ module.exports = {
           900: "#222e1d",
         },
       },
+      screens: {
+        lg: "992px",
+      },
     },
   },
   plugins: [require("@headlessui/tailwindcss")],
