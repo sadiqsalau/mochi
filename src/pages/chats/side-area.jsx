@@ -11,15 +11,18 @@ import { NotificationIcon } from "@/icons/notification-icon";
 import { SectionHeading } from "@/components/section-heading/section-heading";
 import { availableContacts } from "@/fake/available-contacts";
 import { conversations } from "@/fake/conversations";
+import { useNavigate } from "react-router-dom";
 
 export const SideArea = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-screen overflow-auto flex flex-col md:border-r md:border-stone-200">
       {/* Header */}
       <div className="shrink-0">
         <Header
           left={
-            <HeaderButton>
+            <HeaderButton onClick={() => navigate(-1)}>
               <FaChevronLeft />
             </HeaderButton>
           }
