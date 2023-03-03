@@ -42,6 +42,7 @@ export const SideArea = () => {
 
       {/* Content */}
       <div className="relative flex-grow overflow-y-scroll">
+        {/* Recent Chats */}
         <SectionHeading>Recent Chats</SectionHeading>
         <div className="divide-y divide-stone-100">
           {conversations.map((conversations, i) => (
@@ -58,6 +59,7 @@ export const SideArea = () => {
           ))}
         </div>
 
+        {/* Available Friends */}
         <SectionHeading>Available Friends</SectionHeading>
         <div className="divide-y divide-stone-100">
           {availableContacts.map((contact, i) => (
