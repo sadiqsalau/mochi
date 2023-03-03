@@ -41,7 +41,7 @@ export const SideArea = () => {
       </div>
 
       {/* Content */}
-      <div className="relative flex-grow overflow-y-scroll">
+      <div className="relative flex-grow overflow-y-auto">
         {/* Recent Chats */}
         <SectionHeading>Recent Chats</SectionHeading>
         <div className="divide-y divide-stone-100">
