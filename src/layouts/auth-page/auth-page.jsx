@@ -7,7 +7,8 @@ import { Suspense } from "react";
 export const AuthPage = () => (
   <div
     className={clsx(
-      "container mx-auto px-4 min-h-screen",
+      "container mx-auto px-4",
+      "min-h-screen supports-[min-height:100dvh]:min-h-[100dvh]",
       "flex flex-col justify-center"
     )}
   >

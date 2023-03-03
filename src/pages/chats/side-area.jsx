@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ComposeIcon } from "@/icons/compose-icon";
 import { Contact } from "@/components/contact/contact";
 import { Conversation } from "@/components/conversation/conversation";
@@ -17,7 +18,12 @@ export const SideArea = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen overflow-auto flex flex-col md:border-r md:border-stone-200">
+    <div
+      className={clsx(
+        "h-screen supports-[height:100dvh]:h-[100dvh]",
+        "overflow-auto flex flex-col md:border-r md:border-stone-200"
+      )}
+    >
       {/* Header */}
       <div className="shrink-0">
         <Header

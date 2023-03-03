@@ -9,7 +9,7 @@ export const MainArea = () => {
   const location = useLocation();
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen supports-[height:100dvh]:h-[100dvh] flex flex-col">
       {/* Header */}
       <div className="shrink-0">
         <MainAreaHeader />

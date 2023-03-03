@@ -9,7 +9,8 @@ import { onboarding } from "./onboarding";
 export const Welcome = () => (
   <div
     className={clsx(
-      "container mx-auto px-4 min-h-screen",
+      "container mx-auto px-4",
+      "min-h-screen supports-[min-height:100dvh]:min-h-[100dvh]",
       "flex flex-col gap-4 justify-center"
     )}
   >
