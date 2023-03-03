@@ -1,35 +1,50 @@
 import clsx from "clsx";
-import { FaChevronLeft } from "react-icons/fa";
-import { Header } from "@/components/header/header";
-import { HeaderButton } from "@/components/header/header-button";
-import { HeaderTitle } from "@/components/header/header-title";
-import { useNavigate } from "react-router-dom";
+import { Message } from "@/components/message/message";
+import { chatMessages } from "@/fake/chat-messages";
+import { useLocation } from "react-router-dom";
+
+import { MainAreaHeader } from "./main-area-header";
 
 export const MainArea = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <div className="h-screen flex flex-col">
       {/* Header */}
       <div className="shrink-0">
-        <Header
-          left={
-            <HeaderButton className="md:hidden" onClick={() => navigate(-1)}>
-              <FaChevronLeft />
-            </HeaderButton>
-          }
-          center={<HeaderTitle>Larry Page</HeaderTitle>}
-        />
+        <MainAreaHeader />
       </div>
 
       {/* Content */}
       <div className="grow overflow-hidden">
         <div
           className={clsx(
-            "h-full lg:w-full grid grid-cols-[1fr_350px]",
-            "duration-500 lg:transform-none",
-            location.state?.showMenu && "-translate-x-[350px]"
+            "w-[200%] xl:w-full h-full",
+            "grid grid-cols-2 grid-rows-[100%] xl:grid-cols-[1fr_400px]",
+            "duration-500 xl:transform-none",
+            location.state?.showMenu && "-translate-x-1/2"
           )}
-        ></div>
+        >
+          {/* Messages Box */}
+          <div className="h-full flex flex-col">
+            {/* Messages */}
+            <div
+              className={clsx(
+                "relative grow overflow-y-auto",
+                "p-4 flex flex-col gap-4"
+              )}
+            >
+              {chatMessages.map((message, i) => (
+                <Message key={i} {...message} />
+              ))}
+            </div>
+
+            {/* Send Box */}
+            <div className="shrink-0">
+              <div className="bg-[#FAFFF2] p-2 flex"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
