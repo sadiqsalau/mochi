@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useLocation } from "react-router-dom";
 
-import { MainArea } from "./main-area";
+import { MainArea } from "./main-area/main-area";
 import { SideArea } from "./side-area";
 
 export const Chats = () => {
@@ -17,8 +17,6 @@ export const Chats = () => {
         )}
       >
         <SideArea />
-
-        {/* Content */}
         <MainArea />
       </div>
     </div>
