@@ -12,10 +12,12 @@ import { NotificationIcon } from "@/icons/notification-icon";
 import { SectionHeading } from "@/components/section-heading/section-heading";
 import { availableContacts } from "@/fake/available-contacts";
 import { conversations } from "@/fake/conversations";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export const SideArea = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div
@@ -54,7 +56,7 @@ export const SideArea = () => {
           {conversations.map((conversations, i) => (
             <Link
               key={i}
-              to="/chats"
+              to={location.pathname}
               replace={false}
               state={{
                 showMainArea: true,
