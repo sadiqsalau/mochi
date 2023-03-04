@@ -1,4 +1,10 @@
 import clsx from "clsx";
+import {
+  FaCamera,
+  FaChevronCircleUp,
+  FaMicrophone,
+  FaSmile,
+} from "react-icons/fa";
 import { Message } from "@/components/message/message";
 import { chatMessages } from "@/fake/chat-messages";
 import { useLocation } from "react-router-dom";
@@ -43,7 +49,36 @@ export const MainArea = () => {
 
             {/* Send Box */}
             <div className="shrink-0">
-              <div className="bg-[#FAFFF2] p-2 flex"></div>
+              <div className="bg-[#FAFFF2] py-2 flex items-center">
+                {/* More Button */}
+                <button className="px-2">
+                  <FaChevronCircleUp className="w-6 h-6" />
+                </button>
+
+                <div className="relative grow">
+                  {/* Text */}
+                  <input
+                    className="w-full bg-white shadow rounded p-1 pr-7"
+                    type="text"
+                  />
+                  {/* Emoji */}
+                  <span className="absolute right-1 top-1/2 -translate-y-1/2">
+                    <FaSmile className="w-5 h-5" />
+                  </span>
+                </div>
+
+                <div className="flex divide-x">
+                  {/* Photo */}
+                  <button className="px-2">
+                    <FaCamera className="w-6 h-6" />
+                  </button>
+
+                  {/* Audio */}
+                  <button className="px-2">
+                    <FaMicrophone className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
