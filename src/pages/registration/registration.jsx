@@ -8,29 +8,31 @@ export const Registration = () => {
 
   return (
     <form
-      className="flex flex-col gap-2"
+      className="space-y-4"
       onSubmit={(ev) => {
         ev.preventDefault();
         navigate("/chats");
       }}
     >
-      {/* Email */}
-      <FormGroup>
-        <Label>Enter your email ID</Label>
-        <Input type="email" autoComplete="email" />
-      </FormGroup>
+      <div className="space-y-2">
+        {/* Email */}
+        <FormGroup>
+          <Label>Enter your email ID</Label>
+          <Input type="email" autoComplete="email" />
+        </FormGroup>
 
-      {/* Password */}
-      <FormGroup>
-        <Label>Type your password</Label>
-        <Input type="password" autoComplete="new-password" />
-      </FormGroup>
+        {/* Password */}
+        <FormGroup>
+          <Label>Type your password</Label>
+          <Input type="password" autoComplete="new-password" />
+        </FormGroup>
 
-      {/* Password Verification */}
-      <FormGroup>
-        <Label>Retype your password</Label>
-        <Input type="password" autoComplete="new-password" />
-      </FormGroup>
+        {/* Password Verification */}
+        <FormGroup>
+          <Label>Retype your password</Label>
+          <Input type="password" autoComplete="new-password" />
+        </FormGroup>
+      </div>
 
       {/* Social Login */}
       <SocialLogin heading="Link your social media profiles" />
@@ -39,7 +41,7 @@ export const Registration = () => {
       <SubmitButton>Sign Up</SubmitButton>
 
       {/* Login Link */}
-      <p className="text-center py-4">
+      <p className="text-center">
         Already registered?{" "}
         <Link to="/login" className="text-blue-500 hover:underline">
           Login!
