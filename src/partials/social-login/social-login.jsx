@@ -2,7 +2,7 @@ import { ProfileButton } from "./profile-button";
 import { platforms } from "./platforms";
 
 export const SocialLogin = (props) => (
-  <div className="flex flex-col gap-4 py-4">
+  <>
     {/* Heading */}
     <h4 className="text-center">{props.heading}</h4>
 
@@ -14,5 +14,5 @@ export const SocialLogin = (props) => (
         </ProfileButton>
       ))}
     </div>
-  </div>
+  </>
 );
