@@ -22,7 +22,7 @@ export const Conversation = (props) => (
           <p
             className={clsx(
               "text-[0.9375rem] flex-1",
-              props.unreadCount ? "text-blue-500" : "text-stone-600"
+              props.unreadCount ? "text-blue-500" : "text-[#8E8E92]"
             )}
           >
             {props.lastMsg}
