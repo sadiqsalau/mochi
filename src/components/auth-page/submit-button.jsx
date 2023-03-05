@@ -10,7 +10,7 @@ export const SubmitButton = forwardRef((props, ref) => {
         props.className,
         "bg-green-500 text-white",
         "font-bold uppercase",
-        "rounded-full p-2.5"
+        "w-full rounded-full p-2.5"
       )}
     >
       {props.children}
