@@ -16,7 +16,7 @@ export const MainAreaHeader = () => {
     <Header
       left={
         !location.state?.showMenu ? (
-          <HeaderButton className="lg:hidden" onClick={() => navigate(-1)}>
+          <HeaderButton className="md:hidden" onClick={() => navigate(-1)}>
             <FaChevronLeft className="w-6" />
           </HeaderButton>
         ) : null
