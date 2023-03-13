@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react-swc";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { defineConfig, loadEnv } from "vite";
+import { imagetools } from "vite-imagetools";
 import { resolve } from "path";
 
 // https://vitejs.dev/config/
@@ -13,6 +14,6 @@ export default defineConfig(({ mode }) => {
         "@": resolve(__dirname, "src"),
       },
     },
-    plugins: [ViteEjsPlugin(env), react()],
+    plugins: [ViteEjsPlugin(env), imagetools(), react()],
   };
 });
