@@ -1,7 +1,11 @@
 export const onboardingImages = Object.values(
   import.meta.glob("@/assets/images/onboarding/*.png", {
     eager: true,
-    as: "url",
+    import: "default",
+    query: {
+      w: "640",
+      h: "640",
+    },
   })
 );
 
