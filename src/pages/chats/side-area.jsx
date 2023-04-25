@@ -13,11 +13,13 @@ import { SectionHeading } from "@/components/section-heading/section-heading";
 import { availableContacts } from "@/fake/available-contacts";
 import { conversations } from "@/fake/conversations";
 import { useLocation } from "react-router-dom";
+import { useMedia } from "react-use";
 import { useNavigate } from "react-router-dom";
 
 export const SideArea = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const isTabletAndUp = useMedia("(min-width: 768px)");
 
   return (
     <div
@@ -57,7 +59,7 @@ export const SideArea = () => {
             <Link
               key={i}
               to={location.pathname}
-              replace={false}
+              replace={isTabletAndUp}
               state={{
                 showMainArea: true,
               }}
