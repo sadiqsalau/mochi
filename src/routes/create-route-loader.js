@@ -1,16 +1,9 @@
-import { lazy } from "@loadable/component";
+import loadable from "@loadable/component";
 import { paramCase } from "change-case";
 
-export const createRouteLoader = (key, loader) => {
-  const map = new Map();
-  const load = (item) =>
-    map.get(item) ||
-    map
-      .set(
-        item,
-        lazy(() => loader(paramCase(item)).then((module) => module[item]))
-      )
-      .get(item);
-
-  return ({ [key]: name, ...props }) => load(name).render(props);
-};
+export const createRouteLoader = (key, loader, options = {}) =>
+    loadable((props) => loader(paramCase(props[key])), {
+        cacheKey: (props) => props[key],
+        resolveComponent: (module, props) => module[props[key]],
+        ...options,
+    });
