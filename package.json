@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && pwa-assets-generator",
+    "build": "vite build",
     "preview": "vite preview",
     "generate-pwa-assets": "pwa-assets-generator"
   },

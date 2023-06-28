@@ -3,6 +3,9 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { defineConfig, loadEnv } from "vite";
 import { imagetools } from "vite-imagetools";
 import { resolve } from "path";
+import { VitePWA } from "vite-plugin-pwa";
+
+import PWAConfig from "./vite.config.PWA";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -14,6 +17,11 @@ export default defineConfig(({ mode }) => {
         "@": resolve(__dirname, "src"),
       },
     },
-    plugins: [ViteEjsPlugin(env), imagetools(), react()],
+    plugins: [
+      ViteEjsPlugin(env), 
+      VitePWA(PWAConfig(env)),
+      imagetools(), 
+      react()
+    ],
   };
 });
