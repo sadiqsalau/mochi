@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build && pwa-assets-generator",
+    "preview": "vite preview",
+    "generate-pwa-assets": "pwa-assets-generator"
   },
   "dependencies": {
     "@fontsource/quicksand": "^5.0.3",
