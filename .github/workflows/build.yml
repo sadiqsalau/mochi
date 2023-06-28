@@ -33,7 +33,10 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run build --base="/${{ github.event.repository.name }} && pnpm run generate-pwa-assets"
+        run: pnpm run build --base="/${{ github.event.repository.name }}"
+
+      - name: Generate PWA Assets
+        run: pnpm run generate-pwa-assets
 
       - name: Setup 404 page
         run: cp dist/index.html dist/404.html
